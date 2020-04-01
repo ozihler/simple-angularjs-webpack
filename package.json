@@ -1,0 +1,24 @@
+{
+  "name": "angular-seed",
+  "private": true,
+  "version": "0.0.0",
+  "main": "app.js",
+  "description": "A starter project for AngularJS",
+  "repository": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.7.9"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^4.0.4",
+    "rimraf": "^3.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "scripts": {
+    "build": "rimraf dist && webpack --bail --progress --profile",
+    "server": "webpack-dev-server --history-api-fallback --inline --progress --open --watch",
+    "start": "npm run server"
+  }
+}
