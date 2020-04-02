@@ -1,7 +1,10 @@
 export default function mainComponent() {
     return {
         controller: mainComponentCtrl,
-        template: require('./main.component.html')
+        template: require('./main.component.html'),
+        bindings: {
+            title: '@'
+        }
     };
 }
 
@@ -13,6 +16,5 @@ function mainComponentCtrl() {
     ctrl.$onInit = init;
 
     function init() {
-        ctrl.title = "Main Component Works";
     }
 }
