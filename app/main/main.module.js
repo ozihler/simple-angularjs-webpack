@@ -1,4 +1,5 @@
 import mainComponent from "./main.component";
+import {dummyService} from "../shared/dummy.service";
 
-export default angular.module('mainModule', [])
+angular.module('mainModule', [])
     .component('mainComponent', mainComponent());

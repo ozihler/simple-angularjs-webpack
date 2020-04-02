@@ -8,13 +8,17 @@ export default function mainComponent() {
     };
 }
 
-mainComponentCtrl.$inject = [];
+mainComponentCtrl.$inject = ['dummyService'];
 
-function mainComponentCtrl() {
-    let ctrl = this;
-
-    ctrl.$onInit = init;
+function mainComponentCtrl(dummyService) {
+    let $ctrl = this;
+    $ctrl.externalData = {};
+    $ctrl.$onInit = init;
 
     function init() {
+        dummyService.fetchExternal()
+            .then(function (data) {
+                $ctrl.externalData = data;
+            })
     }
 }
