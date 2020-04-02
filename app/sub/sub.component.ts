@@ -9,13 +9,15 @@ export default function subComponent() {
 }
 
 
-class SubComponentController implements ng.IComponentController{
+class SubComponentController implements ng.IComponentController {
 
     static $inject = [];
 
-    constructor() {}
+    constructor(private name: string) {
+
+    }
 
     $onInit() {
-        console.log("Subcomponent initialised");
+        console.log("Subcomponent initialised with name " + this.name);
     }
 }
