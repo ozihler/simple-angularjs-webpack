@@ -1,6 +1,6 @@
 export default function subComponent() {
     return {
-        controller: subComponentController,
+        controller: SubComponentController,
         template: require('./sub.component.html'),
         bindings: {
             name: '@'
@@ -8,13 +8,14 @@ export default function subComponent() {
     };
 }
 
-subComponentController.$inject = [];
 
-function subComponentController() {
-    let $ctrl = this;
-    $ctrl.$onInit = init;
+class SubComponentController implements ng.IComponentController{
 
-    function init() {
+    static $inject = [];
+
+    constructor() {}
+
+    $onInit() {
         console.log("Subcomponent initialised");
     }
 }
