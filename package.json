@@ -11,6 +11,7 @@
     "angular": "^1.7.9"
   },
   "devDependencies": {
+    "@types/node": "^13.9.8",
     "html-loader": "^1.0.0",
     "html-webpack-plugin": "^4.0.4",
     "rimraf": "^3.0.2",
