@@ -8,11 +8,9 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     module: {
-        rules: [
-            {
-                test: /\.(html)$/, use: 'html-loader'
-            }
-            ]
+        rules: [{
+            test: /\.(html)$/, use: 'html-loader'
+        }]
     },
     plugins: [
         new HtmlWebpackPlugin({
