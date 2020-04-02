@@ -2,15 +2,24 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 
 module.exports = {
-    entry: './app/app.module.js',
+    entry: './app/main.ts',
     output: {
-        filename: 'my-first-webpack.bundle.js',
+        filename: 'simpleapp.bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
+    resolve: {extensions: [ ".ts", ".tsx", ".js"]},
+
     module: {
-        rules: [{
-            test: /\.(html)$/, use: 'html-loader'
-        }]
+        rules: [
+            {
+                test: /\.(html)$/,
+                use: 'html-loader'
+            },
+            {
+                test: /\.tsx?$/,
+                use: "ts-loader"
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
